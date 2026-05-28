@@ -1,0 +1,66 @@
+{
+  "name": "ginkelsoft/laravel-compliance-core",
+  "description": "Shared foundation for the GinkelSoft GDPR/AVG compliance family: tamper-evident hash chain, anonymize strategies, subject hashing, and shared configuration.",
+  "keywords": [
+    "laravel",
+    "gdpr",
+    "avg",
+    "compliance",
+    "hash-chain",
+    "tamper-evident",
+    "anonymize",
+    "ginkelsoft"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Wietse van Ginkel",
+      "email": "info@ginkelsoft.com",
+      "homepage": "https://ginkelsoft.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "illuminate/support": "^10.0 || ^11.0 || ^12.0 || ^13.0",
+    "illuminate/database": "^10.0 || ^11.0 || ^12.0 || ^13.0",
+    "illuminate/console": "^10.0 || ^11.0 || ^12.0 || ^13.0",
+    "nesbot/carbon": "^2.62 || ^3.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^8.0 || ^9.0 || ^10.0 || ^11.0",
+    "pestphp/pest": "^2.30 || ^3.0",
+    "phpunit/phpunit": "^10.5 || ^11.0 || ^12.0",
+    "phpstan/phpstan": "^1.10 || ^2.0",
+    "laravel/pint": "^1.18"
+  },
+  "autoload": {
+    "psr-4": {
+      "Ginkelsoft\\ComplianceCore\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Ginkelsoft\\ComplianceCore\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Ginkelsoft\\ComplianceCore\\ComplianceCoreServiceProvider"
+      ]
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/pest",
+    "analyse": "vendor/bin/phpstan analyse",
+    "format": "vendor/bin/pint"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
