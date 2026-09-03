@@ -5,6 +5,14 @@ declare(strict_types=1);
 use Ginkelsoft\ComplianceCore\Config\LogSecret;
 use Illuminate\Support\Facades\Log;
 
+beforeEach(function (): void {
+    // Reset de statische "al gewaarschuwd"-guard tussen tests, anders is
+    // het resultaat afhankelijk van de volgorde waarin tests draaien.
+    $property = new ReflectionProperty(LogSecret::class, 'warned');
+    $property->setAccessible(true);
+    $property->setValue(null, false);
+});
+
 it('returns the configured secret without warning', function (): void {
     Log::spy();
 
