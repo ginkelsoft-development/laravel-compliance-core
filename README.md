@@ -20,6 +20,11 @@ every member of the family relies on:
   `StrategyResolver`, `NullStrategy`, `HashStrategy`, `PlaceholderStrategy`).
 - A single **shared config** with one `log_secret` that signs every chain in
   the family (`config/compliance.php`).
+- `HasSubjectQuery` — a base trait that gives every subject-driven trait in
+  the family (right-to-be-forgotten's `Forgettable`, subject access's
+  `Exportable`) one shared `forSubjectQuery` implementation, resolved via
+  the `ResolvesSubjectColumn` contract, so a model combining several of
+  them no longer needs an `insteadof`.
 - BC fallbacks (`LogSecret`, `PlaceholderConfig`) so installations upgrading
   from the monolithic v1.x `ginkelsoft/laravel-data-retention` package keep
   verifying their existing chains without renaming env vars.
@@ -121,6 +126,7 @@ vendor/bin/pint --test
 ## See also
 
 - [`UPGRADE.md`](UPGRADE.md) — migrating from `laravel-data-retention` v1.x to the family.
+- [`CHANGELOG.md`](CHANGELOG.md) — notable changes per release.
 - The family packages listed at the top of this README.
 
 ## Reporting bugs
