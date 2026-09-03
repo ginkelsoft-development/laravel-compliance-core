@@ -121,6 +121,10 @@ vendor/bin/pint --test
 ## See also
 
 - [`UPGRADE.md`](UPGRADE.md) — migrating from `laravel-data-retention` v1.x to the family.
+- [`docs/release-checklist.md`](docs/release-checklist.md) — release checklist for
+  maintainers, plus `scripts/release-prep.sh` to swap the family packages'
+  `dev-development` dependency for a tagged version before publishing to
+  Packagist (with a `--restore` option to undo it afterwards).
 - The family packages listed at the top of this README.
 
 ## Reporting bugs
