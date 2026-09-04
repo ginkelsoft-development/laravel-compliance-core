@@ -1,0 +1,32 @@
+name: Release readiness check
+
+# Draait bij elke tag-push (v*) en blokkeert de release als composer.json
+# nog een dev-development-vereiste of een path-repository bevat. Zie
+# RELEASE.md voor de volledige release-checklist en
+# scripts/check-release-readiness.sh voor de lokale variant van deze check.
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    name: Check composer.json voor dev-development / path-repositories
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.3
+          coverage: none
+
+      - name: Run check-release-readiness.sh
+        run: |
+          chmod +x scripts/check-release-readiness.sh
+          ./scripts/check-release-readiness.sh
