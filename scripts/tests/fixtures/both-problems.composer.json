@@ -1,0 +1,14 @@
+{
+    "name": "ginkelsoft/laravel-data-retention",
+    "description": "Fixture: zowel dev-development in \"require\" als een path-repository — moet FAALEN (en beide problemen melden).",
+    "require": {
+        "php": "^8.2",
+        "ginkelsoft/laravel-compliance-core": "dev-development"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../laravel-compliance-core"
+        }
+    ]
+}

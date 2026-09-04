@@ -1,0 +1,11 @@
+{
+    "name": "ginkelsoft/laravel-data-retention",
+    "description": "Fixture: dev-development-constraint in \"require\" — moet FAALEN.",
+    "require": {
+        "php": "^8.2",
+        "ginkelsoft/laravel-compliance-core": "dev-development"
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.30"
+    }
+}

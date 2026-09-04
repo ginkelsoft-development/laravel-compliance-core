@@ -1,0 +1,25 @@
+name: Release readiness script tests
+
+# Draait de geautomatiseerde tests voor scripts/check-release-readiness.sh
+# (scripts/tests/run-check-release-readiness-tests.sh) op elke push en PR.
+# Dit is core-specifiek (het script bestaat alleen in dit pakket) en staat
+# daarom los van de gedeelde family-tests.yml-matrix.
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  script-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: PHP beschikbaar maken (nodig voor check-release-readiness.sh)
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+
+      - name: Tests voor check-release-readiness.sh draaien
+        run: scripts/tests/run-check-release-readiness-tests.sh

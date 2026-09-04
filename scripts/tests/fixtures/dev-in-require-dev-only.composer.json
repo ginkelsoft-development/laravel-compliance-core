@@ -1,0 +1,12 @@
+{
+    "name": "ginkelsoft/laravel-data-retention",
+    "description": "Fixture: dev-development-constraint alleen in \"require-dev\" — moet SLAGEN (Composer installeert require-dev van een dependency nooit bij een consument).",
+    "require": {
+        "php": "^8.2",
+        "ginkelsoft/laravel-compliance-core": "^1.0"
+    },
+    "require-dev": {
+        "ginkelsoft/laravel-compliance-core": "dev-development",
+        "pestphp/pest": "^2.30"
+    }
+}
