@@ -34,3 +34,9 @@ vendor/bin/pint --test
 ```
 
 Of gebruik `.zyra/proef.sh` om de package via Testbench te proefdraaien.
+
+## Releaseproces
+
+Een release taggen (van dit pakket of een ander familiepakket) volgt een
+vaste checklist om te voorkomen dat er een `dev-development`-vereiste of
+lokale `path`-repository meegetagd wordt — zie [`RELEASE.md`](RELEASE.md).
