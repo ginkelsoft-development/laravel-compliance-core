@@ -1,0 +1,31 @@
+name: Release readiness check
+
+# Draait scripts/check-release-readiness.sh bij elke tag-push (v*.*.*) en
+# faalt zichtbaar als composer.json nog een dev-development vereiste in
+# "require" of een path-type entry in "repositories" bevat.
+#
+# Let op: dit kan de tag-push zelf niet tegenhouden — een git tag + git push
+# is al gebeurd tegen de tijd dat deze workflow draait. Het enige wat dit
+# doet is de CI-status op de tag laten falen, zodat een niet-conforme
+# release zichtbaar is vóórdat Packagist hem oppikt (of vóórdat je 'm
+# handmatig op Packagist submit). Zie RELEASE.md voor de volledige
+# release-checklist, inclusief het handmatig terugtrekken van een foute tag.
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+permissions:
+  contents: read
+
+jobs:
+  check-release-readiness:
+    runs-on: ubuntu-latest
+    name: Check composer.json op dev-development / path-repositories
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run check-release-readiness.sh
+        run: ./scripts/check-release-readiness.sh
