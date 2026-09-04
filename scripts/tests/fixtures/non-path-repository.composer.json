@@ -1,0 +1,14 @@
+{
+    "name": "ginkelsoft/laravel-data-retention",
+    "description": "Fixture: repositories-blok met een niet-path type (vcs) — moet SLAGEN.",
+    "require": {
+        "php": "^8.2",
+        "ginkelsoft/laravel-compliance-core": "^1.0"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/ginkelsoft-development/some-fork"
+        }
+    ]
+}

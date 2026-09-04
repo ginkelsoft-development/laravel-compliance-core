@@ -1,0 +1,14 @@
+{
+    "name": "ginkelsoft/laravel-data-retention",
+    "description": "Fixture: path-type entry in \"repositories\" — moet FAALEN.",
+    "require": {
+        "php": "^8.2",
+        "ginkelsoft/laravel-compliance-core": "^1.0"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../laravel-compliance-core"
+        }
+    ]
+}

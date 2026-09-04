@@ -1,0 +1,12 @@
+{
+    "name": "ginkelsoft/laravel-data-retention",
+    "description": "Fixture: schone composer.json, klaar voor publicatie — moet SLAGEN.",
+    "require": {
+        "php": "^8.2",
+        "ginkelsoft/laravel-compliance-core": "^1.4"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0",
+        "pestphp/pest": "^2.30"
+    }
+}
