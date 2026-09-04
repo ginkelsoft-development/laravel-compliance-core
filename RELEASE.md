@@ -77,21 +77,7 @@ worden naar getagde versies.
 
 ## Lokaal verifiëren vóór het taggen
 
-`scripts/check-release-readiness.sh` controleert de `composer.json` van
-dít pakket en faalt (non-zero exit) zodra er nog een
-`dev-development`-vereiste in `require`/`require-dev` staat, of een
-`path`-type entry in `repositories`. Draai dit na stap 2 en 3, vóór
-stap 4:
-
-```bash
-./scripts/check-release-readiness.sh
-```
-
-Dezelfde check draait automatisch in CI bij elke tag-push (zie
-`.github/workflows/release-check.yml`) en blokkeert de workflow als er
-nog dev-development-vereisten of path-repositories in `composer.json`
-staan.
-
-**Let op:** dit script controleert alleen de `composer.json` van de
-repo waarin het draait, niet die van de andere familiepakketten. Draai
-het dus per pakket dat je release.
+Het script `scripts/check-release-readiness.sh` (apart opgeleverd, zie
+issue #3) kan na stap 2 en 3 gebruikt worden om te verifiëren dat de
+`composer.json` van dit pakket geen `dev-development`-vereiste of
+`path`-repository meer bevat, vóór je verdergaat naar stap 4.

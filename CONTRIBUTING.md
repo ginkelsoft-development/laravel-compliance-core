@@ -39,7 +39,4 @@ Of gebruik `.zyra/proef.sh` om de package via Testbench te proefdraaien.
 
 Een release taggen (van dit pakket of een ander familiepakket) volgt een
 vaste checklist om te voorkomen dat er een `dev-development`-vereiste of
-lokale `path`-repository meegetagd wordt — zie
-[`RELEASE.md`](RELEASE.md). `scripts/check-release-readiness.sh` voert
-de belangrijkste controle lokaal uit en draait ook automatisch in CI bij
-elke tag-push.
+lokale `path`-repository meegetagd wordt — zie [`RELEASE.md`](RELEASE.md).
